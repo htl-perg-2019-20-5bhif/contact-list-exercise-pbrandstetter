@@ -1,0 +1,34 @@
+﻿@host = https://localhost:44306
+
+###
+GET {{host}}/contacts
+Accept: application/json
+
+###
+GET {{host}}/contacts/findByName?nameFilter=John
+Accept: application/json
+
+###
+POST {{host}}/contacts
+Content-Type: application/json
+
+{
+    "id": 0,
+    "firstName": "John",
+    "lastName": "Locke",
+    "email": "j.locke@mail.com"
+}
+
+###
+POST {{host}}/contacts
+Content-Type: application/json
+
+{
+    "id": 1,
+    "firstName": "Foo",
+    "lastName": "Bar",
+    "email": "foo.bar@mail.com"
+}
+
+###
+DELETE {{host}}/contacts/0
